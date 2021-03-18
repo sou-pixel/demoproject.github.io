@@ -6,8 +6,12 @@ import {HttpClient} from '@angular/common/http';
 })
 export class UserService {
   apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  apiUrls="https://jsonplaceholder.typicode.com/comments";
   constructor(private http:HttpClient) { }
   getPosts(){
     return this.http.get(this.apiUrl);
+  }
+  getPost(){
+    return this.http.get(this.apiUrls);
   }
 }
