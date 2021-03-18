@@ -1,0 +1,9 @@
+.cls{
+    color:grey;
+    background-color: azure;
+}
+.heading{
+    margin-left: 30%;
+    font-weight: 500;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
