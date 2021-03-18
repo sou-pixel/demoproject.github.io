@@ -1,0 +1,18 @@
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+    <a ngbNavLink routerLink="/post">Posts</a>
+   
+  </li>
+  <li ngbNavItem>
+    <a ngbNavLink routerLink="/comment">Comments</a>
+   
+  </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>
+
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+  
+ 
+
