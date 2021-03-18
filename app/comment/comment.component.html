@@ -1,0 +1,20 @@
+
+<h1 [ngClass]="'heading'">Comment Api calling</h1>
+<table class="table table-striped" [ngClass]="'cls'">
+<thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Name</th>   
+    <th scope="col">Email</th>
+    <th scope="col">Body</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of apiComment; index as i">
+    <td>{{user.id}}</td>
+    <td>{{user.name }}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.body}}</td>
+  </tr>
+  </tbody>
+</table>
