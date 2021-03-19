@@ -1,0 +1,34 @@
+<br>
+<h1>Template driven form</h1>
+<br>
+<div class="container">
+    <form #signinForm = "ngForm" (ngSubmit)="loginUser(signinForm);">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="emailAddressField"  #emailAddressField ="ngModel" ngModel email required>
+          <small  class="form-text text-muted" *ngIf="emailAddressField.touched && !emailAddressField.valid">Please enter valid email</small>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="passwordField" #passwordField="ngModel" ngModel  number required>
+          <small  class="form-text text-muted" *ngIf="passwordField.touched && !passwordField.valid && !passwordField.dirty">Please enter the password</small>
+        </div>
+        <label for="exampleInputGender"> Select the gender</label>
+        <div class="form-check">
+            <input type="radio" class="form-check-input" id="examplegender" value="Male" name="genderField" #genderField="ngModel" ngModel required> 
+            <label class="form-check-label" for="exampleCheck1">Male</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" class="form-check-input" id="examplegender" value="Female" name="genderField" #genderField="ngModel" ngModel required> 
+            <label class="form-check-label" for="exampleCheck1">Female</label>
+          </div>
+          <small  class="form-text text-muted" *ngIf="genderField.touched && !genderField.valid">Please Select the Gender</small>
+          <br>
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" name="termsField"  required ngModel> 
+            <label class="form-check-label" for="exampleCheck1">Agree to terms</label>
+          </div>
+        <br>
+        <button type="submit" class="btn btn-primary" [disabled] = "!signinForm.valid">Submit</button>
+      </form>
+    </div>
